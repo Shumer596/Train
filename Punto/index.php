@@ -50,6 +50,7 @@ $translit = array(
 );
 
 $word = strtr('прочее', $translit); // транслитерация. Переменная $word получит значение 'prochee'
-$word = strtr('prochee', array_flip($translit));
+$word = strtr('prochee', array_flip($translit));//sd
+
 
 ?>
