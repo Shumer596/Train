@@ -10,7 +10,9 @@
 include_once('db.php');
 
 /** mysqli $connect */
-$result = mysqli_query($connect, "SELECT * FROM news ORDER BY id DESC ");
+$result = mysqli_query($connect, "SELECT id,title,content,author
+                                  FROM news
+                                  ORDER BY id DESC ");
 
 mysqli_close($connect);
 
