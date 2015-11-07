@@ -1,6 +1,6 @@
 <?php
 
-$translit = array(
+$eng = array(
 
     'а' => 'a',   'б' => 'b',   'в' => 'v',
 
@@ -49,8 +49,8 @@ $translit = array(
 
 );
 
-$word = strtr('прочее', $translit); // транслитерация. Переменная $word получит значение 'prochee'
-$word = strtr('prochee', array_flip($translit));//sd
+$word = strtr('прочее', $eng);
+$word = strtr('prochee', array_flip($eng));//sd
 
 
 ?>
