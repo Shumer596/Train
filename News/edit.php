@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Сохранение новости</title>
+    <title>Редактирование новости</title>
 </head>
 <body>
 
@@ -9,14 +9,31 @@
 
 include_once "db.php";
 /** @var mysqli $connect */
+$id = $_GET['id'];
 $result = mysqli_query($connect, "SELECT title,content, date, time, author FROM news
-                                      WHERE id = '12'");
-mysqli_close($connect);
+                                      WHERE id = '$id'");
+
 $row = mysqli_fetch_assoc($result);
 
+if (isset($_POST['save']))
+{
+    $title = strip_tags(trim($_POST['title']));
+    $content = strip_tags(trim($_POST['content']));
+    $author = strip_tags(trim($_POST['author']));
+    $date = $_POST['date'];
+    $time = $_POST['time'];
+
+    mysqli_query($connect, "UPDATE news SET title = '$title',
+                                            content ='$content',
+                                            author ='$author',
+                                            date = '$date',
+                                            time ='$time'
+                                        WHERE id='$id'");
+    mysqli_close($connect);
+}
 ?>
 
-<form method="post" action="edit.php">
+<form method="post" action="edit.php?id=<?php echo $id ?>">
     Название нвости:<br/>
     <input type="text" name="title" value="<?php echo $row['title'] ?>"/><br/>
     Текст новости:<br/>
