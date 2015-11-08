@@ -11,7 +11,6 @@ include_once "db.php";
 $id = $_GET['id'];
 
 mysqli_query($connect,"DELETE FROM news WHERE id = '$id'");
-mysqli_query($connect,"SET NAMES 'utf8' ");
 mysqli_close($connect);
 
 echo "Новость успешно удалена!";
