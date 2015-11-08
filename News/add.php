@@ -16,7 +16,8 @@
     <input type="hidden" name="date" value="<?php echo date('Y-m-d'); ?>"/>
     <input type="hidden" name="time" value="<?php echo date('H:i:s'); ?>"/>
 
-    <input type="submit" name="add" value="Добавить"/><br/>
+    <input type="submit" name="add" value="Добавить"/><br/><br/>
+    <a href="home.php">Вернуться на главную</a>
 
 </form>
 <?php
@@ -32,7 +33,7 @@ if (isset($_POST['add']))
     $date = $_POST['date'];
     $time = $_POST['time'];
 
-    mysqli_query($connect, "INSERT INTO news (title, content, date1, time, author)
+    mysqli_query($connect, "INSERT INTO news (title, content, date, time, author)
                             VALUES ('$title','$content','$date','$time','$author')
     ");
     mysqli_close($connect);

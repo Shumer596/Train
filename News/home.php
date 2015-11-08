@@ -29,6 +29,7 @@ while ($row = mysqli_fetch_assoc($result))
     <p>Автор новости: <?php echo $row['author'] ?></p>
     <br/>
     <a href="edit.php?id=<?php echo $row['id'] ?>">Редактировать новость</a>
+    <a href="delete.php?id=<?php echo $row['id'] ?>">Удалить новость</a>
     <hr/>
     <?php
 }
