@@ -29,7 +29,12 @@ if (isset($_POST['save']))
                                             date = '$date',
                                             time ='$time'
                                         WHERE id='$id'");
+
+    $result = mysqli_query($connect, "SELECT title,content, date, time, author FROM news
+                                      WHERE id = '$id'");
+    $row = mysqli_fetch_assoc($result);
     mysqli_close($connect);
+    echo "<p><strong>Изменения внесены!!</strong></p>";
 }
 ?>
 
@@ -44,8 +49,8 @@ if (isset($_POST['save']))
     <input type="hidden" name="date" value="<?php echo date('Y-m-d'); ?>"/>
     <input type="hidden" name="time" value="<?php echo date('H:i:s'); ?>"/>
 
-    <input type="submit" name="save" value="Сохранить"/><br/>
-
+    <input type="submit" name="save" value="Сохранить"/><br/><br/>
+    <a href="home.php">Вернуться на главную</a>
 </form>
 
 </body>
