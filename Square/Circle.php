@@ -131,11 +131,13 @@ $b->setSquare(5);
 $b->setPerimetr(5);
 var_dump($b->getSquare());
 var_dump($b->getPerimetr());
+
 $a = new Square;
 $a->setSquare(5);
 $a->setPerimetr(5);
 var_dump($a->getSquare());
 var_dump($a->getPerimetr());
+
 $c = new Rectangle;
 $c->setPerimetr(5,3);
 $c->setSquare(5,3);
