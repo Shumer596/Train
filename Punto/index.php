@@ -52,5 +52,6 @@ $eng = array(
 $word = strtr('прочее', $eng);
 $word = strtr('prochee', array_flip($eng));//sd
 
+echo $word;
 
 ?>
